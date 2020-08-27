@@ -21,7 +21,7 @@ form.addEventListener('submit',function(e){
         </ul>
         <div class="card-body">
           <a href="${data.html_url}" class="card-link">View Profile</a>
-          <a href="/" class="card-link">Find Another </a>
+          <a href="https://shubhamseth29.github.io/GithubProfileFinder/" class="card-link">Find Another </a>
         </div>
       </div>`
 
