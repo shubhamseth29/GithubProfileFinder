@@ -32,45 +32,55 @@ form.addEventListener('submit',function(e){
         console.log(repo)
         
 
-        let output=`<h2 class="mb-4" id="repoHead">REPOSITORIES</> `
+        let output=`<h2 class="mb-4 alert alert-danger" id="repoHead" style="text-align:center;">REPOSITORIES</> `
          repo.forEach((i)=>{
              output+=
-                    `  <div class="accordion" id="accordionExample">
+                    `
+                     <div class="accordion" id="accordionExample">
                     <div class="card">
                       <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
-                          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                          <a href="${i.html_url}" target="_blank"  id="repoBtn" class="btn btn-link btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             ${i.name}
-                            </button>
+                            </a>
                             </h2>
                           </div>
                       
-                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body">
                             <div class="col-md-7">
                             Description:${i.description}
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-sm-3">
                             <span class="badge badge-dark">Forks: ${i.forks_count}</span>
                             <span class="badge badge-primary">Watchers: ${i.watchers_count}</span>
                             <span class="badge badge-success">Stars: ${i.stargazers_count}</span>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-7">
                             <a href="${i.html_url}" target="_blank" class="btn btn-dark">Click here to go to the Repo Page</a>
                             </div>
                               
                             </div>
                           </div>
                         </div>
-                      </div>`
+                      </div>
+                      `
 
                 })
             
-
+        
         document.getElementById("repo").innerHTML=output;
+
+      
+      //NOT WORKING   
+        // document.getElementById("repoBtn").addEventListener('onclick',(e)=>
+        // {
+        //   alert("hi")
+        //   document.getElementById("collapseOne").classList.add("show");
+        
+        // })
          
-     
-               
+       
       
             
         })
